@@ -1,0 +1,315 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "email": "julian@web.de"
+    },
+    {
+      "id": 2,
+      "username": "test",
+      "password": "test",
+      "email": "test@web.de"
+    },
+    {
+      "id": 3,
+      "username": "test2",
+      "password": "test2",
+      "email": "test2@web.de"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "My first post",
+      "content": "This is my first post",
+      "author": 1,
+      "date": "2015-01-01",
+      "comments": [
+        {
+          "id": 1,
+          "author": 2,
+          "content": "This is a comment",
+          "date": "2015-01-01"
+        }
+      ],
+      "tags": [
+        "first",
+        "post"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "My second post",
+      "content": "This is my second post",
+      "author": 1,
+      "date": "2020-01-01",
+      "comments": [
+        {
+          "id": 1,
+          "author": 3,
+          "content": "some comment",
+          "date": "2015-05-08"
+        }
+      ],
+      "tags": [
+        "second",
+        "post"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "My third post",
+      "content": "This is my third post",
+      "author": 2,
+      "date": "2015-01-01",
+      "comments": [
+        {
+          "id": 1,
+          "author": 1,
+          "content": "some comment",
+          "date": "2015-05-08"
+        }
+      ],
+      "tags": [
+        "third",
+        "post"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "My fourth post",
+      "content": "This is my fourth post",
+      "author": 3,
+      "date": "2015-01-01",
+      "comments": [
+        {
+          "id": 1,
+          "author": 1,
+          "content": "some comment",
+          "date": "2015-05-08"
+        }
+      ]
+    },
+    {
+      "title": "creating new Post",
+      "content": "some new Post content",
+      "tags": [
+        "hello",
+        "tags"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 5
+    },
+    {
+      "title": "hai",
+      "content": "new",
+      "tags": [
+        "content",
+        "bla"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 6
+    },
+    {
+      "title": "hello",
+      "content": "bla",
+      "tags": [
+        "some",
+        "tags",
+        "here"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 7
+    },
+    {
+      "title": "hello",
+      "content": "new",
+      "tags": [
+        "post"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 8
+    },
+    {
+      "title": "hello",
+      "content": "some title",
+      "tags": [
+        "tag"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 9
+    },
+    {
+      "title": "hello",
+      "content": "something",
+      "tags": [
+        "check"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 10
+    },
+    {
+      "title": "bla",
+      "content": "content",
+      "tags": [
+        "some",
+        "tag"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 11
+    },
+    {
+      "title": "new",
+      "content": "post",
+      "tags": [
+        "hello"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 12
+    },
+    {
+      "title": "hello",
+      "content": "content",
+      "tags": [
+        "tag",
+        "tag"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 13
+    },
+    {
+      "title": "new Title",
+      "content": "he content",
+      "tags": [
+        "tag",
+        "tag"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 14
+    },
+    {
+      "title": "hai",
+      "content": "content",
+      "tags": [
+        "franz",
+        "is",
+        "smart"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 15
+    },
+    {
+      "title": "sdfdsf",
+      "content": "dsfdsf",
+      "tags": [
+        "dsfdsf"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 16
+    },
+    {
+      "title": "ewfrewr",
+      "content": "ewrewr",
+      "tags": [
+        "werewr"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 17
+    },
+    {
+      "title": "ertgregt",
+      "content": "ergtret",
+      "tags": [
+        "ert"
+      ],
+      "author": 1,
+      "date": "2023-04-21",
+      "comments": [],
+      "id": 18
+    },
+    {
+      "title": "sdgfds",
+      "content": "dsfdsf",
+      "tags": [
+        "sdfsedfsd"
+      ],
+      "author": 1,
+      "date": "2023-04-21T17:42:00.396Z",
+      "comments": [],
+      "id": 19
+    },
+    {
+      "title": "ewfewf",
+      "content": "ewrwrew",
+      "tags": [
+        "ewrewr"
+      ],
+      "author": 1,
+      "date": "2023-04-21T17:49:33.310Z",
+      "comments": [],
+      "id": 20
+    },
+    {
+      "title": "werewr",
+      "content": "werewr",
+      "tags": [
+        "ewrewrew"
+      ],
+      "author": 1,
+      "date": "2023-04-21T17:52:11.443Z",
+      "comments": [],
+      "id": 21
+    },
+    {
+      "title": "sdf",
+      "content": "dsfdsf",
+      "tags": [
+        "sddsf"
+      ],
+      "author": 1,
+      "date": "2023-04-21T17:55:58.080Z",
+      "comments": [],
+      "id": 22
+    },
+    {
+      "title": "sdfds",
+      "content": "dsfdsf",
+      "tags": [
+        "dsfdsf",
+        "dsfdsf"
+      ],
+      "author": 1,
+      "date": "2023-04-21T18:35:37.894Z",
+      "comments": [],
+      "id": 23
+    }
+  ]
+}
