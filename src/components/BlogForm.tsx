@@ -9,56 +9,36 @@ function BlogForm() {
     tags: "",
   };
   const [formState, setFormState] = useState(initialState);
-
   const queryClient = useQueryClient();
 
-  /*   const { data, error, isLoading, isSuccess, ...postMutation } = useMutation<
-    Post,
-    Error,
-    { test: "hi" }
-  >({
-    mutationFn: (variables) => {
-      console.log(variables);
-      return createPost({
-        ...formState,
-        tags: formState.tags.split(", "),
-        author: 1,
-        date: new Date().toISOString(),
-        comments: [],
-      });
-    },
-    onMutate: (variables) => {
-      console.log("I run first");
-      return { fromMutate: "hi" };
-    },
-    onSuccess: (data, variables, context) => {
-      console.log(data, variables, context);
-      queryClient.invalidateQueries(["posts"], { exact: true });
-      setFormState(initialState);
-    },
-  }); */
-
-  const { data, error, isLoading, isSuccess, ...postMutation } = useMutation({
-    mutationFn: (state: typeof formState) => {
-      return createPost({
+  /* useMutation is a React hook that 
+  takes a function and returns an object 
+  with a mutate function. 
+  mutateFn: here you specify your response (post, delete, patch...)
+  onSuccessHandler: gets triggert as soon as response is successful
+  invalidate Queries updates the a query by unique queryKey*/
+  const mutation = useMutation({
+    mutationFn: (state: typeof formState) =>
+      createPost({
         ...state,
         tags: state.tags.split(", "),
         author: 1,
         date: new Date().toISOString(),
         comments: [],
-      });
-    },
-
-    onSuccess: (data, variables, context) => {
-      queryClient.invalidateQueries(["posts"], { exact: true });
-      setFormState(initialState);
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries([
+        "posts",
+        {
+          exact: true,
+        },
+      ]);
     },
   });
 
   function submitHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
-    postMutation.mutate(formState);
+    mutation.mutate(formState);
   }
 
   return (
@@ -101,7 +81,7 @@ function BlogForm() {
       </div>
       <button
         className="px-6 py-2 bg-purple-500 disabled:bg-slate-400"
-        disabled={isLoading}
+        disabled={false}
         type="submit"
       >
         Submit

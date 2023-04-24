@@ -8,40 +8,36 @@ function SinglePost() {
   const { id } = useParams();
 
   const {
-    isLoading: isLoadingPost,
-    isError: isErrorPost,
-    error: errorPost,
-    data: postData,
+    isLoading: isLoadingPosts,
+    isError: isErrorPosts,
+    error: errorPosts,
+    data: dataPosts,
   } = useQuery({
-    queryKey: ["posts", id],
+    queryKey: ["post", id],
     queryFn: () => getPost(id!),
   });
 
-  const {
-    isLoading: isLoadingUser,
-    isError: isErrorUser,
-    error: errorUser,
-    data: userData,
-  } = useQuery({
-    queryKey: ["users", postData?.author!],
-    enabled: postData?.author !== undefined,
-    queryFn: () => getUser(postData?.author!),
+  const { isLoading, isError, error, data } = useQuery({
+    queryKey: ["users", dataPosts?.author],
+    enabled: dataPosts?.author !== undefined,
+    queryFn: () => getUser(dataPosts?.author!),
   });
-
-  const isLoading = isLoadingPost || isLoadingUser;
-  const isError = isErrorPost || isErrorUser;
-  const error = errorPost || errorUser;
 
   if (isLoading) return <div>Loading...</div>;
 
-  if (isError && error instanceof Error)
-    return <div>Error: {error.message}</div>;
+  if (isError) return <div>error</div>;
 
-  console.log({ userData, postData });
+  if (!dataPosts) {
+    throw new Error("Data is undefined");
+  }
 
   return (
     <div>
-      <h1>{userData?.username}</h1>
+      <article>
+        <h2>{dataPosts.author}</h2>
+        <p>{dataPosts.content}</p>
+        <div>{dataPosts.author}</div>
+      </article>
     </div>
   );
 }
