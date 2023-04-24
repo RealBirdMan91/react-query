@@ -19,7 +19,9 @@ function SinglePost() {
 
   const { isLoading, isError, error, data } = useQuery({
     queryKey: ["users", dataPosts?.author],
-    enabled: dataPosts?.author !== undefined,
+    /*enabled makes sure, that the query is only executed, 
+    if the dataPosts?.author is not undefined/
+    enabled: dataPosts?.author !== undefined*/
     queryFn: () => getUser(dataPosts?.author!),
   });
 
